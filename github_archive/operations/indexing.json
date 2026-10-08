@@ -18,11 +18,6 @@
   "bulk-size": {{bulk_size | default(1000)}},
   "ingest-percentage": {{ingest_percentage | default(100)}},
   "retry-until-success": true
-  {%- if conflicts is defined %},
-  "conflicts": "{{p_conflicts}}",
-  "on-conflict": "{{p_on_conflict}}",
-  "conflict-probability": {{p_conflict_probability}}
-  {%- endif %}
   {{ rally.exists_set_param("detailed-results", p_detailed_results, default_value=False) }}
 },
 {
